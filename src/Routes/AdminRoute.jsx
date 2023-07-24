@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { AuthContext } from "../Providers/AuthProvider";
+
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAdmin from "../Hooks/useAdmin";
@@ -17,7 +16,7 @@ const AdminRoute = ({ children }) => {
     if (user && isAdmin) {
         return children;
     }
-    return <Navigate state={{ from: location }} replace to="/logIn"></Navigate>;
+    return <Navigate state={{ from: location }} replace to="/"></Navigate>;
 };
 
 export default AdminRoute;
