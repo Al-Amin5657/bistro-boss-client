@@ -6,16 +6,15 @@ import useAuth from './useAuth';
 
 
 
+
 const useAxiosSecure = () => {
     const { logOut } = useAuth();
     const navigate = useNavigate();
 
-    // Create an Axios instance with a base URL
     const axiosSecure = axios.create({
-        baseURL: 'http://localhost:5000', // Replace with your base URL
+        baseURL: 'http://localhost:5000',
     });
 
-    // Intercept requests to inject the authorization header
     useEffect(() => {
         axiosSecure.interceptors.request.use((config) => {
             const token = localStorage.getItem('access-token');

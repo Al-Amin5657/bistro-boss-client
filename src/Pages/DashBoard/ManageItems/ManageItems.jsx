@@ -19,11 +19,6 @@ const ManageItems = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Swal.fire(
-                //     'Deleted!',
-                //     'Your file has been deleted.',
-                //     'success'
-                // )
                 axiosSecure.delete(`/menu/${item._id}`)
                     .then(res => {
                         console.log('deleted res', res.data);
